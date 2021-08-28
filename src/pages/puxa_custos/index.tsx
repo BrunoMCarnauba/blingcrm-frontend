@@ -58,8 +58,8 @@ export default function TelaPuxaCustos(){
 
             if(dadosOrcamento.visible_number != undefined){
                 setNumeroOrcamento(dadosOrcamento.visible_number);
-                if(dadosOrcamento.clients.length > 0){
-                    setNomeCliente(dadosOrcamento.clients[0].name);
+                if(dadosOrcamento.client != undefined){
+                    setNomeCliente(dadosOrcamento.client.name);
                 }else{
                     setNomeCliente("Não informado");
                 }

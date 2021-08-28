@@ -60,7 +60,6 @@ export default function TelaExtraiItens() {
 
             // Se encontrar o código da tabela do base na tabela 2, então adicionar em uma nova tabela ou remover o item da tabela 2, conforme solicitado pelo usuário.
             if(dadosBase[x][colunaChaveDadosBase] == dadosExtracao[y][colunaChaveDadosExtracao]){
-              console.log(dadosExtracao[y]);
               if(manterCodigosBase == true){  //Se for para manter apenas os dados da tabela base na tabela 2
                 itensExtraidos.push(JSON.parse(JSON.stringify(dadosExtracao[y])));  //Adiciona um clone do objeto encontrado
               }
@@ -77,7 +76,7 @@ export default function TelaExtraiItens() {
       setLoadingStatus("Criando tabela com os itens extraídos...");
       if(itensExtraidos.length == 0 && manterCodigosBase == true){
         setMsgErro("Nenhum dado da tabela base foi encontrado na tabela 2, então nenhum foi extraído");
-      }else if(itensExtraidos.length == 0 && manterCodigosBase == false){
+      }else if(dadosExtracao.length == 0 && manterCodigosBase == false){
         setMsgErro("Todos os dados da tabela base foram encontrados na tabela 2, então todos foram removidos");
       }else if(manterCodigosBase == true){
         await criarExcel(nomeArquivoExcel, itensExtraidos);

@@ -5,7 +5,7 @@ import { criarExcel, lerExcel } from '../../utils/excel';
 import './styles.css';
 import MenuSuperior from '../../components/menu_superior';
 
-export default function TelaFerramentasDiversas() {
+export default function TelaAgrupaTabelas() {
   const [nomeArquivoExcel, setNomeArquivoExcel] = useState<string>('');
 
   // const [substituicaoTributaria, setSubstituicaoTributaria] = useState<number | null>(null);
@@ -64,8 +64,8 @@ export default function TelaFerramentasDiversas() {
   }
 
   return (
-    <div id="tela-ferramentas-diversas">
-      <MenuSuperior tituloPagina={"Ferramentas diversas"} ajudaPressionado={() => setVisualizarAjuda(!visualizarAjuda)}/>
+    <div id="tela-agrupar-tabelas">
+      <MenuSuperior tituloPagina={"Agrupamento de tabelas"} ajudaPressionado={() => setVisualizarAjuda(!visualizarAjuda)}/>
 
       {visualizarAjuda == true &&
         <p className="retangulo">Una várias tabelas em uma única tabela ou divida os dados entre tabelas com uma quantidade limitada de linhas. Para isso, digite o nome que deseja dar para o(s) novo(s) arquivo(s), selecione a(s) tabela(s) desejada(s), caso deseje que os dados sejam divididos em várias tabelas desmarque a opção "Juntar todo conteúdo em uma só tabela" e informe a quantidade máxima de linhas por tabela. No final, pressione o botão "Agrupar tabelas" e aguarde o processo ser concluído. A aplicação fará download do novo arquivo para o seu computador.</p>

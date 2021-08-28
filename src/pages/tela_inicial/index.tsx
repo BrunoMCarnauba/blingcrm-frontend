@@ -94,7 +94,7 @@ export default function TelaInicial(){
                     <Link className="botao-normal" to="/extrai-itens">Ferramenta para extrair itens de uma tabela</Link>
                     <Link className="botao-normal" to="/relatorios-comissoes">Ferramenta para gerar relatório de comissões</Link>
                     <Link className="botao-normal" to="/relatorio-vendas">Ferramenta para gerar planilha com as vendas</Link>
-                    <Link className="botao-normal" to="/ferramentas-diversas">Ferramentas diversas</Link>
+                    <Link className="botao-normal" to="/agrupa-tabelas">Ferramenta para agrupar tabelas</Link>
                     {estaAutenticado() == true &&
                         <>
                             <Link className="botao-normal" to="/puxa-custos">Ferramenta para puxar preços de custo do orçamento</Link>

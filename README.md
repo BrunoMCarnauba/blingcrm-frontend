@@ -15,7 +15,7 @@ A fórmula usada para cálculo do preço de custo é: `((PrecoTabela*(1-Desconto
 ### Ferramenta para extração de itens de uma tabela
 Extraia itens de uma tabela pelo código. Você pode manter apenas os itens nos quais seu código está presente na tabela base ou remover todos os itens que não tem código presente na tabela base. O sistema executa a tarefa e retorna uma planilha excel com os dados extraídos.
 
-### Ferramentas diversas
+### Ferramenta para agrupar tabelas
 Una as tabelas exportadas do ERP em apenas uma tabela com a função de agrupar tabelas, ou divida 1 tabela em várias.
 Essas funções podem ser úteis para juntar tabelas exportadas (quando são exportados mais de 500 produtos o ERP não baixa tudo em uma só tabela), e pode ser útil quando tem uma tabela muito grande para importar, mas por garantia quer importar de 500 em 500 ou algo próximo disso.
 

@@ -1,8 +1,8 @@
-#tela-ferramentas-diversas{
+#tela-agrupar-tabelas{
     /* background-color: #e4eef9; */
 }
 
-#tela-ferramentas-diversas .retangulo{
+#tela-agrupar-tabelas .retangulo{
     padding: 10px;
     margin: 7px 0px;
     background-color: var(--color-primary-light);
