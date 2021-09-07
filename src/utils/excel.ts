@@ -40,10 +40,32 @@ const promiseLerArquivo: Promise<any[]> = new Promise((resolve, reject) => {
  */
 export async function criarExcel (nomeArquivo: string, dados: any[]) {
     let fileType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UFT-8';
-    let fileExtension = '.xlsx';        
+    let fileExtension = '.xls'; //Foi escolhido o formato ".xls' pois quando estava como ".xlsx" os "0" que ficavam a esquerda do código às vezes era removido
 
     //Transformando dados typescript para tabela do sheetjs
     let ws = XLSX.utils.json_to_sheet(dados);
+    
+    // /* Formata as células da tabela como texto - https://github.com/SheetJS/sheetjs/issues/987 */
+    // if(formatarCelulasParaTexto == true){
+    //     let range = XLSX.utils.decode_range(ws['!ref'] || ""); //get worksheet range */
+        
+    //     for(var R = range.s.r; R <= range.e.r; ++R) {
+    //         for(var C = range.s.c; C <= range.e.c; ++C) {
+    //         var cell_address = {c:C, r:R};
+    //         var cell_ref = XLSX.utils.encode_cell(cell_address);
+
+    //             /* if the particular row did not contain data for the column, the cell will not be modified */
+    //             if (!ws[cell_ref]){
+    //                 continue;
+    //             }
+
+    //             /* `.t == "n"` for number cells */
+    //             // if (ws[cell_ref].t !== 'n') { //Se a célula não for do tipo número
+    //                 ws[cell_ref].z = "@";    //Define o formato como texto
+    //             // }
+    //         }
+    //     }
+    // }
 
     //Criando tabela
     let wb = {
@@ -53,10 +75,10 @@ export async function criarExcel (nomeArquivo: string, dados: any[]) {
         }
     }
 
-    let excelBuffer = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+    let excelBuffer = XLSX.write(wb, { bookType: 'xls', type: 'array' });
 
     let arquivo = new Blob([excelBuffer], {type: fileType});
 
     let data = new Date();
-    FileSaver.saveAs(arquivo, nomeArquivo+" 0"+data.getDate()+"-0"+(data.getMonth()+1)+"-"+data.getFullYear());
+    FileSaver.saveAs(arquivo, nomeArquivo+" 0"+data.getDate()+"-0"+(data.getMonth()+1)+"-"+data.getFullYear()+fileExtension);
 }
