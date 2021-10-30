@@ -64,7 +64,7 @@ export default function TelaPuxaCustos(){
                     setNomeCliente("Não informado");
                 }
                 setTotalFrete(dadosOrcamento.shipping_fare);
-                setNomeVendedor(dadosOrcamento.users[0].fullName);
+                setNomeVendedor(dadosOrcamento.user.fullName);
                 let itensPorAmbiente = dadosOrcamento.quotation.items;
                 let produtosAtualizados: ProdutoAtualizado[] = [];
                 let produtoAtualizado: ProdutoAtualizado;
